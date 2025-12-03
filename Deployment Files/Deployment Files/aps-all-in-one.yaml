@@ -5,7 +5,7 @@ metadata:
   name: mongodb
 spec:
   serviceName: mongodb # Associated headless service for DNS resolution
-  replicas: 1 # Number of MongoDB replicas
+  replicas: 3 # Number of MongoDB replicas
   selector:
     matchLabels:
       app: mongodb # Labels to match for this StatefulSet
@@ -37,6 +37,19 @@ spec:
                 - db.runCommand('ping').ok
             initialDelaySeconds: 5 # Wait time before starting probe
             periodSeconds: 5 # Interval between probes
+          volumeMounts:        #Add persistent mount
+            - name: mongo-data
+              mountPath: /data/db
+
+  volumeClaimTemplates:      # Persistent storage for MongoDB data
+    - metadata:
+        name: mongo-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: ""
 ---
 # Service to expose MongoDB
 apiVersion: v1
@@ -48,7 +61,7 @@ spec:
     - port: 27017 # MongoDB service port
   selector:
     app: mongodb # Target pods with label `app: mongodb`
-  type: ClusterIP # Internal cluster service
+  ClusterIP: None # Make service headless
 ---
 # StatefulSet for RabbitMQ
 apiVersion: apps/v1
@@ -89,6 +102,8 @@ spec:
               cpu: 250m
               memory: 256Mi
           volumeMounts: # Mount configuration for RabbitMQ plugins
+            - name: rabbitmq-data
+              mountPath: /var/lib/rabbitmq   #Persistent RabbitMQ data mount
             - name: rabbitmq-enabled-plugins
               mountPath: /etc/rabbitmq/enabled_plugins
               subPath: enabled_plugins
@@ -99,6 +114,15 @@ spec:
             items:
               - key: rabbitmq_enabled_plugins
                 path: enabled_plugins
+  volumeClaimTemplates:       # Persistent storage for RabbitMQ data
+    - metadata:
+        name: rabbitmq-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: ""
 ---
 # Service for RabbitMQ
 apiVersion: v1
@@ -115,7 +139,7 @@ spec:
     - name: rabbitmq-http
       port: 15672
       targetPort: 15672
-  type: ClusterIP
+  ClusterIP: None   #Make RabbitMQ service headless
 ---
 # Deployment for Order Service
 apiVersion: apps/v1
@@ -510,7 +534,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: ai-service
-          image: ramymohamed/ai-service-l8:latest
+          image: kmgeorge/ai-service-l8:latest
           ports:
             - containerPort: 5001
           env:
