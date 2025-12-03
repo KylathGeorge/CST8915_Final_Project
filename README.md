@@ -12,7 +12,11 @@
 
 Diagram:
 
-![Architecture Diagram](/CST8915_Final_Project\CST8915-final-project-architecture.drawio.svg)
+(![Architecture Diagram](image.png))
+
+svg:
+
+![alt text](CST8915-final-project-architecture.drawio.svg)
 
 ## Brief application explanation
 
