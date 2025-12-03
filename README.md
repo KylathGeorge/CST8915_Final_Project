@@ -16,6 +16,17 @@ Diagram:
 
 ## Brief application explanation
 
+This is a demo of a cloud-native application that contains 5 microservices:
+
+- **Store-Front**: Customer web app.
+- **Store-Admin**: Employee web app.
+- **Order-Service**: Order processing API.
+- **Product-Service**: Product management API.
+- **Makeline-Service**: Background worker for order processing.
+- **Database**: MongoDB (Stateful).
+
+These microserves make up the demo app for the Best Buy cloud-native store. These microservices will be deployed to the Azure Kubernetes Service and will have automatic CI/CD pipelines which will automatically deploy any changes made to the store.
+
 ## Deployment instructions
 
 ## Links Table: Repository links and Docker Hub image links for all services
