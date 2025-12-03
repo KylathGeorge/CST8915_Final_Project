@@ -29,6 +29,13 @@ These microserves make up the demo app for the Best Buy cloud-native store. Thes
 
 ## Deployment instructions
 
+1. Provision AKS with one servernode and one worker node.
+2. Run the following command:
+
+```kubernetes
+kubectl apply -f aps-all-in-one.yaml
+```
+
 ## Links Table: Repository links and Docker Hub image links for all services
 
 | Repository Link | Docker Hub Link |
