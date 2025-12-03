@@ -18,8 +18,8 @@
 
 | Repository Link | Docker Hub Link |
 |----------       |----------       |
-| Row 1           | Value 1                |
-| Row 2           | Value 2                |
-| Row 3           | Value 3                |
-| Row 4           | Value 4                |
-| Row 5           | Value 5                |
+| <https://github.com/KylathGeorge/CST8915-store-front-final-project>           | <https://hub.docker.com/r/kmgeorge/store-front-final-project/tags>               |
+| <https://github.com/KylathGeorge/CST8915-store-admin-final-project>           | <https://hub.docker.com/r/kmgeorge/store-admin-final-project/tags>                |
+| <https://github.com/KylathGeorge/CST8915-product-service-final-project>           | <https://hub.docker.com/r/kmgeorge/product-service-final-project/tags>                |
+| <https://github.com/KylathGeorge/CST8915-order-service-final-project>           | <https://hub.docker.com/r/kmgeorge/order-service-final-project/tags>                |
+| <https://github.com/KylathGeorge/CST8915-makeline-service-final-project>           | <https://hub.docker.com/r/kmgeorge/makeline-service-final-project/tags>                |
