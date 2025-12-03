@@ -10,6 +10,10 @@
 
 ## Updated Architecture Diagram
 
+Diagram:
+
+![Architecture Diagram](/CST8915_Final_Project\CST8915-final-project-architecture.drawio.svg)
+
 ## Brief application explanation
 
 ## Deployment instructions
