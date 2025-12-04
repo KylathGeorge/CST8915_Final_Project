@@ -33,6 +33,7 @@ These microserves make up the demo app for the Best Buy cloud-native store. Thes
 2. Run the following command in /Deployment Files/aps-all-in-one.yaml:
 
 ```kubernetes
+kubectl apply -f config-maps.yaml
 kubectl apply -f aps-all-in-one.yaml
 ```
 
