@@ -379,7 +379,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: store-front
+  name: store-front-final-project
 spec:
   replicas: 1
   selector:
