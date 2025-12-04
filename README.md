@@ -32,7 +32,7 @@ On the Back End, Order Service handles orders and pushes orders to the RabbitMQ 
 ## Deployment instructions
 
 1. Provision AKS with one servernode and one worker node.
-2. Run the following command in /Deployment Files/aps-all-in-one.yaml:
+2. Run the following command in /Deployment Files/aps-all-in-one.yaml directory:
 
 ```kubernetes
 kubectl apply -f config-maps.yaml
