@@ -25,7 +25,9 @@ This is a demo of a cloud-native application that contains 5 microservices:
 - **Makeline-Service**: Background worker for order processing.
 - **Database**: MongoDB (Stateful).
 
-These microserves make up the demo app for the Best Buy cloud-native store. These microservices will be deployed to the Azure Kubernetes Service and will have automatic CI/CD pipelines which will automatically deploy any changes made to the store.
+These microserves make up the demo app for the Best Buy cloud-native store. These microservices will be deployed to the Azure Kubernetes Service and will have automatic CI/CD pipelines which will automatically deploy any changes made to the store. From the architecture diagram, we can see tehre are two actors: Customers and Employees. The customers interact with the Store Front which is a customer web application, which sends requests to the Order Service to place orders and the Product Service to fetch information on the products. The Store admin is a employee web interface and allows employees to send requests to the Makeline Service for order processing  and Product Service for managing the products.
+
+On the Back End, Order Service handles orders and pushes orders to the RabbitMQ service for asynchronous processing. The Makeline Service processes orders from the queue adn updates the order database with the processed orders.
 
 ## Deployment instructions
 
