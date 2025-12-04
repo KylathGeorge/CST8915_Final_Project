@@ -60,7 +60,7 @@ spec:
     - port: 27017 # MongoDB service port
   selector:
     app: mongodb # Target pods with label `app: mongodb`
-  ClusterIP: None # Make service headless
+  clusterIP: None # Make service headless
 ---
 # StatefulSet for RabbitMQ
 apiVersion: apps/v1
@@ -137,7 +137,7 @@ spec:
     - name: rabbitmq-http
       port: 15672
       targetPort: 15672
-  ClusterIP: None   #Make RabbitMQ service headless
+  clusterIP: None   #Make RabbitMQ service headless
 ---
 # Deployment for Order Service
 apiVersion: apps/v1
