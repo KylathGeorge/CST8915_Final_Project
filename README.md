@@ -6,6 +6,8 @@
 
 ## Youtube Link
 
+**Note: In the demo video I forgot to mention that mongoDB is stateful and has persistent storage attached to it (as can be seen in the aps-all-in-one.yaml) and has 3 replicas.**
+
 [Final Project Youtube Link](https://www.youtube.com/watch?v=GlhF4TALSd8)
 
 ## Updated Architecture Diagram
