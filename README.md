@@ -6,7 +6,7 @@
 
 ## Youtube Link
 
-[Final Project Youtube Link]()
+[Final Project Youtube Link](https://www.youtube.com/watch?v=GlhF4TALSd8)
 
 ## Updated Architecture Diagram
 
